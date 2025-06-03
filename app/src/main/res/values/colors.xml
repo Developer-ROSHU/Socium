@@ -6,4 +6,5 @@
     <color name="light_red_A200">#FAB3AF</color>
     <color name="background">#09d3e7</color>
     <color name="light_blue_900">#FF01579B</color>
+    <color name="grey">#AFAFAF</color>
 </resources>

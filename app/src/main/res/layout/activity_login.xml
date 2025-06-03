@@ -8,20 +8,11 @@
     android:layout_weight="1"
     android:padding="20dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/light_red_A200"
-        android:orientation="vertical">
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:translationY="15dp"
-            android:translationZ="15dp"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="25dp"
-            android:background="@color/white"
-            app:cardElevation="1dp"
+            app:cardElevation="5dp"
             tools:targetApi="lollipop">
 
             <ScrollView
@@ -29,28 +20,34 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/lock" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Log-In"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
 
-                    <RelativeLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:gravity="center"
-                            android:text="LOGIN"
-                            android:textColor="@color/light_blue_900"
-                            android:textSize="30sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
+                        android:gravity="center"
+                        android:text="Create account before Login"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/grey" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -143,5 +140,4 @@
                 </LinearLayout>
             </ScrollView>
         </androidx.cardview.widget.CardView>
-    </LinearLayout>
 </LinearLayout>
