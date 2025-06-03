@@ -6,13 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText etEmail, etPassword;
-    Button btnLogin;
-    DatabaseHelper databaseHelper;
+    private EditText etEmail, etPassword;
+    private Button btnLogin;
+    private DatabaseHelper databaseHelper;
+    private TextView txtCreateAccount;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -20,9 +22,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        etEmail = findViewById(R.id.etEmail);
+        etEmail = findViewById(R.id.etUser_Id);
         etPassword = findViewById(R.id.etPassword);
-        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin = findViewById(R.id.btnContinue);
+        txtCreateAccount = findViewById(R.id.txtCreateAccount);
 
         databaseHelper = new DatabaseHelper(this);
 
@@ -30,6 +33,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUser();
+            }
+        });
+
+        txtCreateAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -42,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             boolean isValid = databaseHelper.checkUser(email, password);
             if (isValid) {
                 Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, HomeActivity.class)); // Redirect to home page
+                startActivity(new Intent(this, HomeActivity.class));
             } else {
                 Toast.makeText(this, "Invalid Credentials!", Toast.LENGTH_SHORT).show();
             }
