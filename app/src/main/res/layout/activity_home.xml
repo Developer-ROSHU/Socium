@@ -3,26 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="WelCome"/>
-
-    <GridView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-        android:columnWidth="100dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center"/>
+        android:layout_marginTop="20dp"
+        android:padding="8dp"/>
 
 </LinearLayout>
