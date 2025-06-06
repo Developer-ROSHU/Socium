@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="button_color">#009688</color>
-    <color name="light_red_A200">#FAB3AF</color>
-    <color name="background">#09d3e7</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccen">#45E6D6</color>
+    <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A300">#57C0EF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="light_red_A200">#FAB3AF</color>
+    <color name="light_yellow_A200">#F8EFA7</color>
+    <color name="light_yellow_A100">#FBF6CB</color>
+    <color name="light_red_A600">#FC807A</color>
+    <color name="light_green_A200">#C7FBF7</color>
+    <color name="black_overlay">#40000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#fff</color>
     <color name="grey">#AFAFAF</color>
+    <color name="red">#F44336</color>
+    <color name="light_green_A600">#9CEDA0</color>
+    <color name="light_green_A300">#48F851</color>
+    <color name="light_green_A100">#9CEDA0</color>
+    <color name="button_color">#bb3385</color>
+    <color name="background">#09d3e7</color>
+    <color name="blue">#A7F8EF</color>
+    <color name="textbox_p2bpinview">#282828</color>
+    <color name="p2bpin_box_border">#cacaca</color>
+    <color name="dividerColor">#D8D6D6</color>
+    <color name="list_item_title">#101010</color>
+    <color name="list_group_icon"> #808080</color>
+    <color name="list_group_title">#100F0F</color>
+    <color name="green_light">#5DFAEB</color>
+    <color name="time_req_icon">#55ACEE</color>
+    <color name="card_purple">#EC9BE8</color>
+    <color name="card_green">#8EBC90</color>
+    <color name="card_orange">#E3B473</color>
+    <color name="card_red">#EF837B</color>
+    <color name="card_blue">#8CCDEA</color>
+
+    <color name="card_purple2">#E3759B</color>
+    <color name="card_green2">#E3D561</color>
+    <color name="card_orange2">#98E4DD</color>
+    <color name="card_red2">#EAB2A1</color>
+    <color name="card_blue2">#3949AB</color>
+
 </resources>

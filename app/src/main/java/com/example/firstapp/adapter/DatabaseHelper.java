@@ -1,4 +1,4 @@
-package com.example.firstapp;
+package com.example.firstapp.adapter;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -14,6 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_NAME = "Name";
     private static final String COL_EMAIL = "Email";
     private static final String COL_PASSWORD = "Password";
+    private static final String COL_MOBILE = "Mobile";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -25,6 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_NAME + " TEXT, " +
                 COL_EMAIL + " TEXT, " +
+                COL_MOBILE + " TEXT, " +
                 COL_PASSWORD + " TEXT)";
         db.execSQL(createTable);
     }
@@ -35,12 +37,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertUser(String name, String email, String password) {
+    public boolean insertUser(String name, String email, String password, String mobile) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_NAME, name);
         contentValues.put(COL_EMAIL, email);
         contentValues.put(COL_PASSWORD, password);
+        contentValues.put(COL_MOBILE, mobile);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
         return result != -1;

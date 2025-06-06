@@ -1,4 +1,4 @@
-package com.example.firstapp.models;
+package com.example.firstapp.viewmodel;
 
 public class HomeGridList {
         private int Image;

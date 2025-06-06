@@ -9,6 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.firstapp.adapter.DatabaseHelper;
+import com.example.firstapp.home.HomeTab;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText etEmail, etPassword;
@@ -53,12 +58,29 @@ public class LoginActivity extends AppCompatActivity {
             boolean isValid = databaseHelper.checkUser(email, password);
             if (isValid) {
                 Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this, HomeActivity.class));
+                startActivity(new Intent(this, HomeTab.class));
+//                FragmentManager fragmentManager =getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.container, fragment, tag);
+//                fragmentTransaction.addToBackStack(null); //this will add it to back stack
+//                fragmentTransaction.commit();
+
             } else {
                 Toast.makeText(this, "Invalid Credentials!", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+            if(email.isEmpty()){
+                etEmail.setError("Required Field");
+            } else {
+                etPassword.setError("Required Field");
+            }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        etEmail.setText("");
+        etPassword.setText("");
+        super.onResume();
     }
 }
