@@ -13,13 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.firstapp.adapter.HomeRecyclerAdapter;
 import com.example.firstapp.R;
 import com.example.firstapp.core.OnItemClickListener;
-import com.example.firstapp.modules.ContainerFragment;
 import com.example.firstapp.modules.MemberRegistration;
 import com.example.firstapp.viewmodel.HomeGridList;
 
@@ -53,7 +51,6 @@ public class HomeFragment extends Fragment {
         gridView.setHasFixedSize(true);
         gridView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
-        gridList.clear();
         gridList.add(new HomeGridList(R.drawable.person,"Registration"));
         gridList.add(new HomeGridList(R.drawable.ruppess,"Maintenance"));
         gridList.add(new HomeGridList(R.drawable.investment,"Expenses"));
@@ -66,12 +63,10 @@ public class HomeFragment extends Fragment {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, String value) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentManager fragmentManager = getParentFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.viewPager, new MemberRegistration(),"hello" );
-                fragmentTransaction.addToBackStack(null); //this will add it to back stack
+                fragmentTransaction.replace(R.id.container, new MemberRegistration(),"hello");
                 fragmentTransaction.commit();
-                Toast.makeText(getContext(), "Hello", LENGTH_SHORT).show();
             }
         });
 
